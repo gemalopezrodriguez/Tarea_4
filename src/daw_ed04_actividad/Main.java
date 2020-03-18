@@ -7,8 +7,8 @@ package daw_ed04_actividad;
 
 
 public class Main {
-
-    public static void main(String[] args) {
+    
+    public static void main(String[] args) throws Exception {
         CCuenta cuentaUno;
         double saldoActual;
 
@@ -16,16 +16,14 @@ public class Main {
         saldoActual = cuentaUno.estado();
         System.out.println("El saldo actual es"+ saldoActual );
 
-        try {
-            cuentaUno.retirar(2300);
-        } catch (Exception e) {
-            System.out.print("Fallo al retirar");
-        }
-        try {
-            System.out.println("Ingreso en cuenta");
-            cuentaUno.ingresar(695);
-        } catch (Exception e) {
-            System.out.print("Fallo al ingresar");
-        }
+    
+            operacuenta(cuentaUno);
+        
+    }
+
+    private static void operacuenta(CCuenta cuentaUno) throws Exception {
+        cuentaUno.retirar(2300);
+        
+        cuentaUno.ingresar(695);
     }
 }
